@@ -14,6 +14,7 @@
                 templateUrl: 'app/Views/career.html'
             })
             .when('/charity', {
+                controller: 'app/Controllers/charityController',
                 templateUrl: 'app/Views/charity.html'
             })
             .when('/education', {
