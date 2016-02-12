@@ -4,7 +4,7 @@
         var wikiMethods = {
             getCharityWater: function(){
                 var deferObject_CharityWater;
-                var CharityWater_promise = $http.jsonp('https://en.wikipedia.org/w/api.php?titles=Charity:_Water&action=query&rawcontinue=true&prop=extracts&format=json&rvprop=content&callback=JSON_CALLBACK');
+                var CharityWater_promise = $http.jsonp('https://en.wikipedia.org/w/api.php?action=query&formatversion=2&prop=extracts&titles=Charity:_Water&exintro=true&exsentences=2&explaintext=true&format=json&callback=JSON_CALLBACK');
                 deferObject_CharityWater = deferObject_CharityWater || $q.defer();
                 
                 CharityWater_promise.then(function(data){
@@ -20,6 +20,5 @@
     wikiService.$inject = ['$http', '$q'];
         
     angular.module('appMDMS')
-	  .service('wikiService', wikiService);
-    
+	  .service('wikiService', wikiService);    
 }());
