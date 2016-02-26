@@ -23,6 +23,7 @@
             .when('/social', {
                 templateUrl: 'app/Views/social.html'
             })
+        
             .otherwise({redirectTo: '/'});
     });
 }());
