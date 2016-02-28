@@ -5,9 +5,6 @@
     appMDMS.config(function ($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'app/Views/home.html'
-            })
-            .when('/about', {
                 templateUrl: 'app/Views/about.html'
             })
             .when('/career', {
