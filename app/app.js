@@ -14,16 +14,11 @@
             .when('/education', {
                 templateUrl: 'app/Views/education.html'
             })
-            .when('/social', {
-                templateUrl: 'app/Views/social.html'
-            })
-            .when('/projects', {
-                templateUrl: 'app/Views/projects.html'
-            })
             .when('/pageinfo', {
                 templateUrl: 'app/Views/pageinfo.html'
             })
         
             .otherwise({redirectTo: '/'});
     });
+    
 }());
