@@ -6,8 +6,7 @@
         $scope.Movember_Intro = 'Movember info. from Wikipedia';
         
         $scope.load = function(){            
-            jQuery('#popoverData').popover();
-            jQuery('#popoverOption').popover({ trigger: "hover" });
+            jQuery('.popoverData').popover();
             
             //Charity Water
             var CharityWater_PromiseReturn = wikiService.getCharityWater();
