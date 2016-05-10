@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    var appMDMS = angular.module('appMDMS', ['ngRoute']);
+    var appMDMS = angular.module('appMDMS', ['ngRoute', 'firebase']);
     
     appMDMS.config(function ($routeProvider) {
         $routeProvider
