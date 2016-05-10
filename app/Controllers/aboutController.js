@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    var aboutController = function ($scope, wikiService, $http) {
+    var aboutController = function ($scope, wikiService, firebaseFactory, $http) {
         
         $scope.CharityWater_Intro = 'Charity water info. from Wikipedia';
         $scope.Movember_Intro = 'Movember info. from Wikipedia';
@@ -8,6 +8,13 @@
         $scope.load = function(){            
             jQuery('.popoverData').popover();
             
+            //Golf Handicap
+            var HandicapNow_PromiseReturn = firebaseFactory.getCurrentHandicap(); 
+            HandicapNow_PromiseReturn.$loaded().then(function(){
+                // console.log(HandicapNow_PromiseReturn.$value); 
+                $scope.HandicapNow = HandicapNow_PromiseReturn.$value;
+            });
+        
             //Charity Water
             var CharityWater_PromiseReturn = wikiService.getCharityWater();
             CharityWater_PromiseReturn.then(function (data){
@@ -28,7 +35,7 @@
         
     };
     
-    aboutController.$inject = ['$scope', 'wikiService', '$http'];
+    aboutController.$inject = ['$scope', 'wikiService', 'firebaseFactory', '$http'];
     
     angular.module('appMDMS')
         .controller('aboutController', aboutController);    
